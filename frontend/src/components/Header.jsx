@@ -3,32 +3,34 @@ import { useSelector } from "react-redux";
 import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { useLogoutMutation } from "../slices/usersApiSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useLogoutMutation } from "../slices/usersApiSlice";
+import { resetCart } from "../slices/cartSlice";
+import { logout } from "../slices/authSlice";
 import Logo from "../assets/logo.png";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  // const [logoutApiCall] = useLogoutMutation();
+  const [logoutApiCall] = useLogoutMutation();
 
-  // const logoutHandler = async () => {
-  //   try {
-  //     await logoutApiCall().unwrap();
-  //     dispatch(logout());
-  //     // NOTE: here we need to reset cart state for when a user logs out so the next
-  //     // user doesn't inherit the previous users cart and shipping
-  //     dispatch(resetCart());
-  //     navigate("/login");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      // NOTE: here we need to reset cart state for when a user logs out so the next
+      // user doesn't inherit the previous users cart and shipping
+      dispatch(resetCart());
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
   return (
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
@@ -59,7 +61,9 @@ const Header = () => {
                     <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
                     </LinkContainer>
-                    <NavDropdown.Item onClick={""}>Logout</NavDropdown.Item>
+                    <NavDropdown.Item onClick={logoutHandler}>
+                      Logout
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </>
               ) : (
