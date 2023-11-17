@@ -1,5 +1,7 @@
 # ProShop
 
+![14](https://github.com/BarisYildirimm/ProShop/assets/72316936/db7b5818-bb71-43dd-8a7e-95b01143ffee)
+![15](https://github.com/BarisYildirimm/ProShop/assets/72316936/76ed1b99-d915-45b1-9769-fd38d8a2a27f)
 ![1](https://github.com/BarisYildirimm/ProShop/assets/72316936/694cc97c-8391-49dd-9aa2-ae771e54dee3)
 ![2](https://github.com/BarisYildirimm/ProShop/assets/72316936/a641bdf1-19cf-4006-97ef-f88a7334647c)
 ![3](https://github.com/BarisYildirimm/ProShop/assets/72316936/9a3b200f-ffbc-4230-9a69-89b01302dc87)
@@ -13,5 +15,4 @@
 ![11](https://github.com/BarisYildirimm/ProShop/assets/72316936/97a961df-30a0-4685-a764-a0fa6c20aeb6)
 ![12](https://github.com/BarisYildirimm/ProShop/assets/72316936/a5a0ce94-4ae8-48a1-9814-96825bc4afe4)
 ![13](https://github.com/BarisYildirimm/ProShop/assets/72316936/ae7b8189-65ae-4136-aa3f-ccc972a870ba)
-![14](https://github.com/BarisYildirimm/ProShop/assets/72316936/db7b5818-bb71-43dd-8a7e-95b01143ffee)
-![15](https://github.com/BarisYildirimm/ProShop/assets/72316936/76ed1b99-d915-45b1-9769-fd38d8a2a27f)
+
