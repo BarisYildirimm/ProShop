@@ -2,7 +2,7 @@ import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-dotenv.config();
+import cors from 'cors';
 import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
@@ -11,10 +11,22 @@ import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 
+dotenv.config(); 
 const port = process.env.PORT || 5000;
 connectDB();
 
 const app = express();
+
+  
+
+const corsOptions = {
+  origin: 'http://localhost:3000',  
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  
+  allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));  
+
 
 //body parser middleware
 app.use(express.json());
